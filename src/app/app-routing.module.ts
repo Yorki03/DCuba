@@ -5,7 +5,7 @@ const newLocal = './peges/informacion/informacion.module';
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./peges/home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
     path: '',
@@ -15,6 +15,14 @@ const routes: Routes = [
   {
     path: 'informacion',
     loadChildren: () => import('./peges/informacion/informacion.module').then( m => m.InformacionPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./auth/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'registrar',
+    loadChildren: () => import('./auth/registrar/registrar.module').then( m => m.RegistrarPageModule)
   },
 ];
 
