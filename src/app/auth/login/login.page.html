@@ -4,7 +4,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content class="background" [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">login</ion-title>
@@ -13,17 +13,17 @@
 
   <div id="container">
     <form (ngSubmit)="login()" #loginForm="ngForm">
-      <ion-item>
+      <ion-item class="data">
         <ion-label position="floating">Usuario</ion-label>
         <ion-input type="text" name="usuario"  required></ion-input>
       </ion-item>
       <br>
-      <ion-item>
+      <ion-item class="data">
         <ion-label position="floating">Contraseña</ion-label>
         <ion-input type="password" name="contrasena"  required></ion-input>
       </ion-item>
       <br>
-      <ion-button type="submit" expand="full">Iniciar Sesión</ion-button>
+      <ion-button class="ini_button" type="submit" expand="full">Iniciar Sesión</ion-button>
     </form>
   </div>
 
