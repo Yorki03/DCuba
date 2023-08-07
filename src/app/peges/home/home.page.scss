@@ -29,3 +29,28 @@
 .margen{
   margin-bottom: 50px;
 }
+
+.boton-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.centered-text {
+  text-align: center;
+  font-weight: bold;
+}
+
+ion-content.background {
+  --background: url(/assets/web/background_home.jpg) 0 0/100% 100% no-repeat;
+}
+
+.boton-empezar {
+  padding: 20px;
+}
+
+.home_image {
+  padding: 10px;
+}
