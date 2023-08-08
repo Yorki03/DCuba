@@ -5,7 +5,7 @@ const newLocal = './peges/informacion/informacion.module';
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./peges/home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
     path: '',
@@ -14,7 +14,7 @@ const routes: Routes = [
   },
   {
     path: 'informacion',
-    loadChildren: () => import('./peges/informacion/informacion.module').then( m => m.InformacionPageModule)
+    loadChildren: () => import('./pages/informacion/informacion.module').then( m => m.InformacionPageModule)
   },
   {
     path: 'login',
@@ -24,6 +24,15 @@ const routes: Routes = [
     path: 'registrar',
     loadChildren: () => import('./auth/registrar/registrar.module').then( m => m.RegistrarPageModule)
   },
+  {
+    path: 'jugadas',
+    loadChildren: () => import('./pages/jugadas/jugadas.module').then( m => m.JugadasPageModule)
+  },
+  {
+    path: 'limitados',
+    loadChildren: () => import('./pages/limitados/limitados.module').then( m => m.LimitadosPageModule)
+  },
+
 ];
 
 @NgModule({
