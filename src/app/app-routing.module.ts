@@ -5,16 +5,12 @@ const newLocal = './peges/informacion/informacion.module';
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./peges/home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
-  },
-  {
-    path: 'informacion',
-    loadChildren: () => import('./peges/informacion/informacion.module').then( m => m.InformacionPageModule)
   },
   {
     path: 'login',
