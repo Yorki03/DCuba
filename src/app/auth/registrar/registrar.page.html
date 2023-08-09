@@ -1,6 +1,10 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Registrar</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-title><b>Registrar</b></ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -10,4 +14,29 @@
       <ion-title size="large">registrar</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <form action="">
+    <ion-item class="data_primero">
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input type="text" name="nombre"  required></ion-input>
+    </ion-item>
+  
+    <ion-item class="data">
+      <ion-label position="floating">Apellidos</ion-label>
+      <ion-input type="text" name="apellidos"  required></ion-input>
+    </ion-item>
+  
+    <ion-item class="data">
+      <ion-label position="floating">Teléfono(Móvil)</ion-label>
+      <ion-input type="number" name="movil"  required></ion-input>
+    </ion-item>
+
+    <ion-item class="data">
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" name="contrasena"  required></ion-input>
+    </ion-item>
+
+    <ion-button class="reg_button" type="submit" expand="full">Registrar</ion-button>
+  </form>
+
 </ion-content>
