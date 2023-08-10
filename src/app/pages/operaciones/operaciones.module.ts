@@ -21,8 +21,6 @@ import { LimitadosPage } from './components/limitados/limitados.page';
   ],
   declarations: [
     OperacionesPage,
-    JugadasPage, 
-    LimitadosPage
   ]
 })
 export class OperacionesPageModule {}

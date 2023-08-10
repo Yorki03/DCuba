@@ -1,13 +1,54 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>operaciones</ion-title>
+    <ion-title><b>Operaciones</b></ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content class="background" [fullscreen]="true">
+  
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">operaciones</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar>
+        
+      </ion-toolbar>
+    </ion-header>
+    <ion-content >
+      <ion-list>
+        <ion-item>
+          <b>Cerrar sesion</b>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <div class="ion-page" id="main-content">
+    
+  </div>
+
+  <ion-tabs>
+
+    <ion-tab-bar slot="bottom">
+      
+      <ion-tab-button tab="jugadas">
+        <i class="pi pi-dollar" style="font-size: 1.5rem; margin-top: 5px;"></i>
+        <ion-label style="font-size: 17px; margin: 5px;"><b>Jugadas</b></ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="limitados">
+        <i class="pi pi-ban" style="font-size: 1.5rem; margin-top: 5px;"></i>
+        <ion-label style="font-size: 17px; margin: 5px;"><b>Limitados</b></ion-label>
+      </ion-tab-button>
+
+    </ion-tab-bar>
+
+  </ion-tabs>
+
 </ion-content>

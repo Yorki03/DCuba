@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
-const newLocal = './peges/informacion/informacion.module';
 const routes: Routes = [
   {
     path: 'home',
@@ -9,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {
@@ -19,6 +18,10 @@ const routes: Routes = [
   {
     path: 'registrar',
     loadChildren: () => import('./auth/registrar/registrar.module').then( m => m.RegistrarPageModule)
+  },
+  {
+    path: 'operaciones',
+    loadChildren: () => import('./pages/operaciones/operaciones.module').then( m => m.OperacionesPageModule)
   },
 ];
 
