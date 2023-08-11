@@ -13,21 +13,19 @@
 
   <div id="container">
     <form>
-      <ion-item>
-        <ion-label position="floating">Teléfono</ion-label>
-        <ion-input type="text" [(ngModel)]="miFormulario.telefono"></ion-input>
+      <ion-item class="data">
+        <ion-input label="Teléfono" labelPlacement="floating"  type="tel" name="telefono" ></ion-input>
       </ion-item>
   
-      <ion-item>
-        <ion-label position="floating">Contraseña</ion-label>
-        <ion-input type="password" [(ngModel)]="miFormulario.password"></ion-input>
+      <ion-item class="data">
+        <ion-input label="Contraseña" labelPlacement="floating" type="password" name="password" ></ion-input>
       </ion-item>
   
       <br>
   
-      <ion-button expand="full" (click)="login()">Inicair secion</ion-button>
+      <ion-button class="ini_button" expand="full" (click)="login()">Inicair secion</ion-button>
       <br>
-      <ion-button expand="full" [routerLink]="[ '/registrar']">Registrarse</ion-button>
+      <ion-button class="ini_button" expand="full" [routerLink]="[ '/registrar']">Registrarse</ion-button>
     </form>
   </div>
 
