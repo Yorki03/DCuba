@@ -12,20 +12,22 @@
   </ion-header>
 
   <div id="container">
-    <form (ngSubmit)="login()" #loginForm="ngForm">
-      <ion-item class="data">
-        <ion-label position="floating">Usuario</ion-label>
-        <ion-input type="text" name="usuario"  required></ion-input>
+    <form>
+      <ion-item>
+        <ion-label position="floating">Teléfono</ion-label>
+        <ion-input type="text" [(ngModel)]="miFormulario.telefono"></ion-input>
       </ion-item>
-      <br>
-      <ion-item class="data">
+  
+      <ion-item>
         <ion-label position="floating">Contraseña</ion-label>
-        <ion-input type="password" name="contrasena"  required></ion-input>
+        <ion-input type="password" [(ngModel)]="miFormulario.password"></ion-input>
       </ion-item>
+  
       <br>
-      <ion-button class="ini_button" type="submit" expand="full">Iniciar Sesión</ion-button>
+  
+      <ion-button expand="full" (click)="login()">Inicair secion</ion-button>
       <br>
-      <a [routerLink]="[ '/registrar']"><ion-button class="ini_button" expand="full">Registrarse</ion-button></a>
+      <ion-button expand="full" [routerLink]="[ '/registrar']">Registrarse</ion-button>
     </form>
   </div>
 

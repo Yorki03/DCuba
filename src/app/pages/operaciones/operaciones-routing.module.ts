@@ -9,6 +9,10 @@ const routes: Routes = [
     component: OperacionesPage,
     children: [
       {
+        path: 'operaciones',
+        loadChildren: () => import('./operaciones.module').then(m => m.OperacionesPageModule),
+      },
+      {
         path: 'jugadas',
         loadChildren: () => import('./components/jugadas/jugadas.module').then( m => m.JugadasPageModule),
       },
