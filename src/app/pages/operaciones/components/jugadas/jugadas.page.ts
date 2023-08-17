@@ -27,10 +27,4 @@ export class JugadasPage implements OnInit {
     }
   }
 
-  validateInput(event: any) {
-    const inputValue = event.target.value;
-    const cleanedValue = inputValue.replace(/[^0-9]/g, ''); // Eliminar no números
-    const limitedValue = cleanedValue.substring(0, 2); // Limitar a dos caracteres
-    event.target.value = limitedValue; // Actualizar el valor en el campo de entrada
-  }
 }
