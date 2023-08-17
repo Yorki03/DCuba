@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { OperacionesPage } from './operaciones.page';
+import { NumerosPage } from './components/numeros/numeros.page';
 
 const routes: Routes = [
   {
@@ -9,8 +10,12 @@ const routes: Routes = [
     component: OperacionesPage,
     children: [
       {
-        path: 'operaciones',
-        loadChildren: () => import('./operaciones.module').then(m => m.OperacionesPageModule),
+        path: '',
+        loadChildren: () => import('./components/numeros/numeros.module').then(m => m.NumerosPageModule),
+      },
+      {
+        path: 'numeros',
+        loadChildren: () => import('./components/numeros/numeros.module').then(m => m.NumerosPageModule),
       },
       {
         path: 'jugadas',

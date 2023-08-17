@@ -15,10 +15,12 @@
     </ion-toolbar>
   </ion-header>
 
-  <div style="text-align: center;">
-    <h4>fecha</h4>
-    <br>
 
+  <div style="text-align: center;">
+    <h2><b>Jugadas</b></h2>
+    <ion-label>fecha</ion-label>
+    <br>
+    
       <ion-checkbox [(ngModel)]="opcion1" (ionChange)="opcion1Changed()"><b>Mediodia</b></ion-checkbox>
     
       <ion-checkbox  [(ngModel)]="opcion2" (ionChange)="opcion2Changed()"><b>Noche</b></ion-checkbox>
@@ -32,7 +34,7 @@
         <ion-col>
           <ion-label class="titulos-menores"><b>Numero</b></ion-label>
           <br><br>
-          <ion-input class="campos-numero" label="00" labelPlacement="floating" type="text" name="numero" aria-required="true" fill="solid"></ion-input>
+          <ion-input expand="block" class="campos-numero" label="00" labelPlacement="floating" type="text" name="numero" aria-required="true" fill="solid"></ion-input>
         </ion-col>
         <ion-col>
           <ion-label class="titulos-menores"><b>Fijo</b></ion-label>
@@ -100,7 +102,7 @@
         <ion-col>
           <ion-label class="titulos-menores"><b>Numero:</b></ion-label>
           <br><br>
-          <ion-input class="campos" style="margin-right: 5px;" label="00" labelPlacement="floating"  type="number" name="numero" aria-required="true" fill="solid"></ion-input>
+          <ion-input class="campos" style="margin-right: 5px;" label="000" labelPlacement="floating"  type="number" name="numero" aria-required="true" fill="solid"></ion-input>
         </ion-col>
         <ion-col>
           <ion-label class="titulos-menores"><b>Jugada:</b></ion-label>

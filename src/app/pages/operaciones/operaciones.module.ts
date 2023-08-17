@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { OperacionesPageRoutingModule } from './operaciones-routing.module';
 
 import { OperacionesPage } from './operaciones.page';
+import { NumerosPage } from './components/numeros/numeros.page';
 
 
 @NgModule({
