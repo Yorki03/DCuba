@@ -1,30 +1,32 @@
-import { Component, OnInit } from '@angular/core';
-import { VariablesLogin } from './util/variables';
-import { FormBuilder, Validators } from '@angular/forms';
+import { Component,  } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/shared/service/auth.service';
+
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage implements OnInit {
+export class LoginPage {
 
-  variable = new VariablesLogin
-
-  constructor(
-    private formBuilder: FormBuilder
-  ) { }
-
-  ngOnInit() {
-    this.variable.miformulario = this.formBuilder.group({
-      telefono: ['', Validators.required],
-      password:['', Validators.required, Validators.minLength(8)]
-    });
+  miFormulario: any ={
+    nombre: '',
+    telefono: ''
   }
 
+  constructor(private authService: AuthService, private router: Router) { }
+
   login(){
-    console.log(this.variable.miformulario.value);
-    console.log(this.variable.miformulario.valid);
+   
+    const {nombre, telefono} = this.miFormulario;
+    this.authService.postLogin(nombre, telefono).subscribe(ok =>{
+      if(ok === true){
+        this.router.navigateByUrl('/operaciones');
+      }else{
+        console.log('Error de login');
+      }
+    })
     
   }
 }

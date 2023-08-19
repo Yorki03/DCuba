@@ -14,106 +14,141 @@
       <ion-title size="large">jugadas</ion-title>
     </ion-toolbar>
   </ion-header>
-
+  <br>
 
   <div style="text-align: center;">
-    <h2><b>Jugadas</b></h2>
-    <ion-label>fecha</ion-label>
+    <ion-datetime-button disabled="true" datetime="datetime"></ion-datetime-button>
+
+    <ion-modal [keepContentsMounted]="true">
+      <ng-template>
+        <ion-datetime id="datetime"></ion-datetime>
+      </ng-template>
+    </ion-modal>
     <br>
     
-      <ion-checkbox [(ngModel)]="opcion1" (ionChange)="opcion1Changed()"><b>Mediodia</b></ion-checkbox>
+    <ion-checkbox [(ngModel)]="opcion1" (ionChange)="opcion1Changed()"><b>Mediodia</b></ion-checkbox>
     
-      <ion-checkbox  [(ngModel)]="opcion2" (ionChange)="opcion2Changed()"><b>Noche</b></ion-checkbox>
-    
+    <ion-checkbox  [(ngModel)]="opcion2" (ionChange)="opcion2Changed()"><b>Noche</b></ion-checkbox>
+
   </div>
-  <hr>
-  <div style="margin: 20px;">
-    <h4 style="text-align: center;"><b>No. jugados:</b></h4>
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <ion-label class="titulos-menores"><b>Numero</b></ion-label>
-          <br><br>
-          <ion-input expand="block" class="campos-numero" label="00" labelPlacement="floating" type="text" name="numero" aria-required="true" fill="solid"></ion-input>
-        </ion-col>
-        <ion-col>
-          <ion-label class="titulos-menores"><b>Fijo</b></ion-label>
-          <br><br>
-          <ion-input class="campos-numero-importe" label="$0.00" labelPlacement="floating" type="number" name="fijo" aria-required="true" fill="solid"></ion-input>
-        </ion-col>
-        <ion-col>
-          <ion-label class="titulos-menores"><b>Corrido</b></ion-label>
-          <br>
-          <br>
-          <ion-input class="campos-numero-importe" label="$0.00" labelPlacement="floating" type="number" name="corrido" aria-required="true" fill="solid"></ion-input>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <ion-input class="campos-numero" label="00" labelPlacement="floating" type="number" name="numero" aria-required="true" fill="solid"></ion-input>
-        </ion-col>
-        <ion-col>
-          <ion-input class="campos-numero-importe" label="$0.00" labelPlacement="floating" type="number" name="fijo" aria-required="true" fill="solid"></ion-input>
-        </ion-col>
-        <ion-col>
-          <ion-input class="campos-numero-importe" label="$0.00" labelPlacement="floating" type="number" name="corrido" aria-required="true" fill="solid"></ion-input>
-        </ion-col>
-      </ion-row>
-      
-    </ion-grid>
-  </div>
-  <hr>
-  <div style="margin: 20px;">
-    <h4 style="text-align: center;"><b>Parles:</b></h4>
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <ion-label class="titulos-menores"><b>Numeros:</b></ion-label>
-          <br><br>
-          <div style="display: flex;">
+  <br>
+
+  <form>
+
+    <div style="margin: 20px;">
+      <h4 style="text-align: center"><b>No. jugados:</b></h4>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-label class="titulos-menores"><b>Numero</b></ion-label>
+            <br><br>
+            <ion-input class="campos-numero" [(ngModel)]="JugadasNormales.numero" label="00" labelPlacement="floating" type="text" name="numero" aria-required="true" fill="solid"></ion-input>
+          </ion-col>
+          
+          <ion-col>
+            <ion-label class="titulos-menores"><b>Fijo</b></ion-label>
+            <br><br>
+            <ion-input class="campos-numero-importe" [(ngModel)]="JugadasNormales.dinero_fijo" label="$0.00" labelPlacement="floating" type="number" name="fijo" aria-required="true" fill="solid"></ion-input>
+          </ion-col>
+          
+          <ion-col>
+            <ion-label class="titulos-menores"><b>Corrido</b></ion-label>
+            <br>
+            <br>
+            <ion-input class="campos-numero-importe" [(ngModel)]="JugadasNormales.dinero_corrido" label="$0.00" labelPlacement="floating" type="number" name="corrido" aria-required="true" fill="solid"></ion-input>
+          </ion-col>
+        </ion-row>
+  
+        <ion-row>
+          <ion-col>
+              <ion-input class="campos-numero" label="00" labelPlacement="floating" type="number" name="numero" aria-required="true" fill="solid"></ion-input>
+          </ion-col>
+          <ion-col>
+            <ion-input class="campos-numero-importe" label="$0.00" labelPlacement="floating" type="number" name="fijo" aria-required="true" fill="solid"></ion-input>
+          </ion-col>
+          <ion-col>
+            <ion-input class="campos-numero-importe" label="$0.00" labelPlacement="floating" type="number" name="corrido" aria-required="true" fill="solid"></ion-input>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  
+    <div style="margin: 20px;">
+      <h4><b>Parles:</b></h4>
+      <ion-grid>
+        <ion-row>
+          <ion-col><b>Numeros</b></ion-col>
+          <ion-col><b>Jugada</b></ion-col>
+        </ion-row>
+  
+        <ion-row>
+          <ion-col>
             <ion-input class="campos" style="margin-right: 5px;" label="00" labelPlacement="floating"  type="number" name="numero" aria-required="true" fill="solid"></ion-input>
+          </ion-col>
+  
+          <ion-col>
             <ion-input class="campos" label="00" labelPlacement="floating"  type="number" name="numero" aria-required="true" fill="solid"></ion-input>
-          </div>
-        </ion-col>
-        <ion-col>
-          <ion-label class="titulos-menores"><b>Jugada:</b></ion-label>
-          <br><br>
-          <ion-input class="campos" label="$0.00" labelPlacement="floating"  type="number" name="fijo" aria-required="true" fill="solid"></ion-input>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <div style="display: flex;">
+          </ion-col>
+  
+          <ion-col>
+            <ion-input class="campos" label="$0.00" labelPlacement="floating"  type="number" name="fijo" aria-required="true" fill="solid"></ion-input>
+          </ion-col>
+        </ion-row>
+  
+        <ion-row>
+          <ion-col>
             <ion-input class="campos" style="margin-right: 5px;" label="00" labelPlacement="floating"  type="number" name="numero" aria-required="true" fill="solid"></ion-input>
+          </ion-col>
+  
+          <ion-col>
             <ion-input class="campos" label="00" labelPlacement="floating"  type="number" name="numero" aria-required="true" fill="solid"></ion-input>
-          </div>
-        </ion-col>
-        <ion-col>
-          <ion-input class="campos" label="$0.00" labelPlacement="floating"  type="number" name="fijo1" aria-required="true" fill="solid"></ion-input>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
-  <hr>
-  <div style="margin: 20px;">
-    <h4 style="text-align: center;"><b>Centenas:</b></h4>
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <ion-label class="titulos-menores"><b>Numero:</b></ion-label>
-          <br><br>
-          <ion-input class="campos" style="margin-right: 5px;" label="000" labelPlacement="floating"  type="number" name="numero" aria-required="true" fill="solid"></ion-input>
-        </ion-col>
-        <ion-col>
-          <ion-label class="titulos-menores"><b>Jugada:</b></ion-label>
-          <br><br>
-          <ion-input class="campos" label="$0.00" labelPlacement="floating"  type="number" name="numero" aria-required="true" fill="solid"></ion-input>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
-  <hr>
-  <div>
-    <ion-button class="ini_button" expand="full">Enviar</ion-button>
-  </div>
+          </ion-col>
+  
+          <ion-col>
+            <ion-input class="campos" label="$0.00" labelPlacement="floating"  type="number" name="fijo" aria-required="true" fill="solid"></ion-input>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  
+    <div style="margin: 20px;">
+      <h4><b>Centenas:</b></h4>
+      <ion-grid>
+        <ion-row>
+          <ion-col><b>Numero</b></ion-col>
+          <ion-col><b>Jugada</b></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div style="display: flex;">
+              <ion-input class="campos" style="margin-right: 5px;" label="000" labelPlacement="floating"  type="number" name="numero" aria-required="true" fill="solid"></ion-input>
+              <ion-input class="campos" label="$0.00" labelPlacement="floating"  type="number" name="numero" aria-required="true" fill="solid"></ion-input>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  
+    <div style="margin: 20px;">
+      <h4><b>Confirmacion de Jugadas:</b></h4>
+      <ion-grid>
+        <ion-row>
+          <ion-col><b>Telefono</b></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div style="display: flex;">
+              <ion-input class="campos" [(ngModel)]="movillUser.telefono" label="Telefono" labelPlacement="floating"  type="tel" name="telefono" aria-required="true" fill="solid"></ion-input>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <br>
+
+    <ion-button class="ini_button" (click)="enviar()" expand="full">Hacer Jugadas</ion-button>
+
+  </form>
+
 </ion-content>
