@@ -12,8 +12,15 @@
   </ion-header>
 
 <div style="text-align: center;">
-  <h2><b>Limitados</b></h2>
-  <ion-label>fecha</ion-label>
+  <br>
+  <ion-datetime-button disabled="true" datetime="datetime"></ion-datetime-button>
+
+    <ion-modal [keepContentsMounted]="true">
+      <ng-template>
+        <ion-datetime id="datetime"></ion-datetime>
+      </ng-template>
+    </ion-modal>
+    <br>
 </div>
 <hr>
 <div style="text-align: center;">
