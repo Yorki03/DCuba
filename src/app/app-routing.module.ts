@@ -23,6 +23,7 @@ const routes: Routes = [
     path: 'operaciones',
     loadChildren: () => import('./pages/operaciones/operaciones.module').then( m => m.OperacionesPageModule)
   },
+
 ];
 
 @NgModule({

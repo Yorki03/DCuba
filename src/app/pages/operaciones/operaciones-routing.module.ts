@@ -25,8 +25,13 @@ const routes: Routes = [
         path: 'limitados',
         loadChildren: () => import('./components/limitados/limitados.module').then( m => m.LimitadosPageModule)
       },
+      {
+        path: 'resumen',
+        loadChildren: () => import('./components/resumen/resumen.module').then( m => m.ResumenPageModule)
+      },
     ]
   },
+
 ];
 
 @NgModule({
