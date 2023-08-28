@@ -24,3 +24,11 @@ ion-label.titulos-menores {
 .ini_button {
     padding: 20px;
 }
+
+.ini_button:host{
+    --border-radius: 20px;
+}
+
+button.button-naive:host(.button-full:not(.button-round)) .button-native{
+    border-radius: 20px;
+}

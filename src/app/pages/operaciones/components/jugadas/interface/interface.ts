@@ -3,6 +3,11 @@ export interface JugadasNormales{
     msg: string;
 }
 
+export interface JugadaCorrida{
+    ok: boolean;
+    msg: string;
+}
+
 export interface JugadasParles{
     ok: boolean;
     msg: string;
@@ -13,7 +18,3 @@ export interface JugadasCentenas{
     msg: string
 }
 
-export interface IdJugadores{
-    ok: boolean;
-    id_usuario: number;
-}

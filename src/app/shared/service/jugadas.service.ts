@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { catchError, map } from 'rxjs';
 
 import { handleError } from '../functions/http-error';
-import {  IdJugadores, JugadasCentenas, JugadasNormales, JugadasParles  } from 'src/app/pages/operaciones/components/jugadas/interface/interface';
+import { JugadaCorrida, JugadasCentenas, JugadasNormales, JugadasParles  } from 'src/app/pages/operaciones/components/jugadas/interface/interface';
 
 
 @Injectable({
@@ -14,19 +14,29 @@ export class JugadasService {
   constructor(private http: HttpClient) { }
 
   //Jugadas normales
-  postNormales(dinero_fijo: string, dinero_corrido: string, telefono:string, id_numero: number){
+  postNormales(dinero_fijo: number, estado:string, telefono:string, id_numero: number){
     const url = 'http://localhost:4000/normal';
-    const body = {dinero_fijo, dinero_corrido, telefono, id_numero};
-    return this.http.post<JugadasNormales>(url, body).pipe(
+    const body = {dinero_fijo, estado, telefono, id_numero};
+    return this.http.post<JugadasNormales>(url, body).pipe( 
+      map(res => res.ok),
+      catchError(handleError)
+    )
+  }
+
+  //Jugada de Corridos
+  postCorrido(telefono: string, estado: string, dinero: number, id_numero: number){
+    const url = 'http://localhost:4000/corridas';
+    const body = {telefono, estado, dinero, id_numero};
+    return this.http.post<JugadaCorrida>(url, body).pipe(
       map(res => res.ok),
       catchError(handleError)
     )
   }
 
   //Jugadas Parles
-  postParles(jugadasparles: JugadasParles){
+  postParles(dinero: number, telefono:string, estado: string, id_numero1: number, id_numero2:number){
     const url = 'http://localhost:4000/parles';
-    const body = jugadasparles;
+    const body = {dinero, telefono, estado, id_numero1, id_numero2};
 
     return this.http.post<JugadasParles>(url, body).pipe(
       map(res => res.ok),
@@ -35,9 +45,9 @@ export class JugadasService {
   }
 
   //Jugadas Centenas
-  postCentenas( ){
+  postCentenas( dinero:number, numero:number, estado:string, telefono:string, id_numero:number){
     const url = 'http://localhost:4000/centenas';
-    const body = {};
+    const body = {dinero, numero, estado, telefono, id_numero};
 
     return this.http.post<JugadasCentenas>(url, body).pipe(
       map(res => res.ok),
@@ -45,15 +55,4 @@ export class JugadasService {
     )
   }
 
-  //Buscar id de jugador por telefono
-  getIdJugador(telefono: string){
-    const url = 'http://localhost:4000/auth/id';
-    const body = {telefono};
-
-    return this.http.post<IdJugadores>(url, body).pipe(
-      map(res => res.id_usuario),
-      catchError(handleError)
-    )
-
-  }
 }

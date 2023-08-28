@@ -13,8 +13,10 @@ import { JugadasPage } from './jugadas.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    JugadasPageRoutingModule
+    JugadasPageRoutingModule,
   ],
-  declarations: [JugadasPage]
+  declarations: [
+    JugadasPage
+  ]
 })
 export class JugadasPageModule {}

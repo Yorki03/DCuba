@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>historial</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background" [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">historial</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <br>
+
+  <div style="text-align: center;">
+    <ion-datetime-button disabled="true" datetime="datetime"></ion-datetime-button>
+
+    <ion-modal [keepContentsMounted]="true">
+      <ng-template>
+        <ion-datetime id="datetime"></ion-datetime>
+      </ng-template>
+    </ion-modal> 
+  </div>
+  <br>
+
+  <ion-list >
+    <ion-item-group>
+      <ion-item-divider color="warning">
+        <h5 style="text-align: center; color: black;"><b>Jugadas Normales</b></h5>
+      </ion-item-divider>
+      <ion-item-divider color="success">
+        
+        <h5 style="text-align: center; color: black;"><ion-icon name="cash"></ion-icon> <b>  Dinero: 0</b></h5>
+      </ion-item-divider>
+      
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col><b>#</b></ion-col>
+            <ion-col><b>Tel</b></ion-col>
+            <ion-col><b>Estado</b></ion-col>
+            <ion-col><b>D.Fijo</b></ion-col>
+            <ion-col><b>D.Corrido</b></ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+
+      <ion-item *ngFor="let normal of normales">
+        <ion-grid>
+          <ion-row>
+            <ion-col>{{normal.idNumero}}</ion-col>
+            <ion-col>{{normal.Telefono}}</ion-col>
+            <ion-col>{{normal.Estado}}</ion-col>
+            <ion-col>{{normal.dineroFijo}}</ion-col>
+            <ion-col>{{normal.dineroCorrido}}</ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-item-group>
+  </ion-list>
+    
+</ion-content>

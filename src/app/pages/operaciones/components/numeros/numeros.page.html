@@ -30,19 +30,15 @@
     <br>
     <ion-grid>
       <ion-row>
-        <ion-col style="background-color: white; margin: 10px;">
+        <ion-col *ngFor="let dia of dias" style="background-color: white; margin: 10px;">
           <ion-label class="numeros">
-            00
+            {{dia.centena/100}}
           </ion-label>
         </ion-col>
-        <ion-col style="background-color: white; margin: 10px;">
+
+        <ion-col *ngFor="let dia of dias" style="background-color: white; margin: 10px;">
           <ion-label class="numeros">
-            00
-          </ion-label>
-        </ion-col>
-        <ion-col style="background-color: white; margin: 10px;">
-          <ion-label class="numeros">
-            00
+            {{dia.centena%100}}
           </ion-label>
         </ion-col>
       </ion-row>
@@ -50,26 +46,18 @@
       <h4 style="text-align: center;"><b>Corrido</b></h4>
       <br>
       <ion-row>
-        <ion-col style="background-color: white; margin: 10px;">
+        <ion-col *ngFor="let dia of dias" style="background-color: white; margin: 10px;">
           <ion-label class="numeros">
-            00
+            {{dia.corrido1}}
           </ion-label>
         </ion-col>
-        <ion-col style="background-color: white; margin: 10px;">
+
+        <ion-col *ngFor="let dia of dias" style="background-color: white; margin: 10px;">
           <ion-label class="numeros">
-            00
+            {{dia.corrido2}}
           </ion-label>
         </ion-col>
-        <ion-col style="background-color: white; margin: 10px;">
-          <ion-label class="numeros">
-            00
-          </ion-label>
-        </ion-col>
-        <ion-col style="background-color: white; margin: 10px;">
-          <ion-label class="numeros">
-            00
-          </ion-label>
-        </ion-col>
+
       </ion-row>
     </ion-grid>
   </div>
@@ -82,19 +70,15 @@
     <br>
     <ion-grid>
       <ion-row>
-        <ion-col style="background-color: white; margin: 10px;">
+        <ion-col *ngFor="let noche of noches" style="background-color: white; margin: 10px;">
           <ion-label class="numeros">
-            00
+            {{noche.centena}}
           </ion-label>
         </ion-col>
-        <ion-col style="background-color: white; margin: 10px;">
+
+        <ion-col *ngFor="let noche of noches" style="background-color: white; margin: 10px;">
           <ion-label class="numeros">
-            00
-          </ion-label>
-        </ion-col>
-        <ion-col style="background-color: white; margin: 10px;">
-          <ion-label class="numeros">
-            00
+            {{noche.centena}}
           </ion-label>
         </ion-col>
       </ion-row>
@@ -102,27 +86,18 @@
       <h4 style="text-align: center;"><b>Corrido</b></h4>
       <br>
       <ion-row>
-        <ion-col style="background-color: white; margin: 10px;">
+        <ion-col *ngFor="let noche of noches" style="background-color: white; margin: 10px;">
           <ion-label class="numeros">
-            00
+            {{noche.corrido1}}
           </ion-label>
         </ion-col>
-        <ion-col style="background-color: white; margin: 10px;">
+
+        <ion-col *ngFor="let noche of noches" style="background-color: white; margin: 10px;">
           <ion-label class="numeros">
-            00
+            {{noche.corrido2}}
           </ion-label>
         </ion-col>
-        <ion-col style="background-color: white; margin: 10px;">
-          <ion-label class="numeros">
-            00
-          </ion-label>
-        </ion-col>
-        <ion-col style="background-color: white; margin: 10px;">
-          <ion-label class="numeros">
-            00
-          </ion-label>
-        </ion-col>
-      </ion-row>
+        </ion-row>
     </ion-grid>
   </div>
 

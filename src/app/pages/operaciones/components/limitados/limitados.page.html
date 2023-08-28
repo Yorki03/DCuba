@@ -12,6 +12,7 @@
   </ion-header>
 
 <div style="text-align: center;">
+  <h2><b>Limitados</b></h2>
   <br>
   <ion-datetime-button disabled="true" datetime="datetime"></ion-datetime-button>
 
@@ -20,150 +21,32 @@
         <ion-datetime id="datetime"></ion-datetime>
       </ng-template>
     </ion-modal>
-    <br>
 </div>
-<hr>
+<br>
 <div style="text-align: center;">
   <h3 style="text-align: center;"><b>Mediodia</b></h3>
   <br><br>
   <ion-grid>
     <ion-row>
-      <ion-col style="background-color: white; margin: 10px;">
+      <ion-col *ngFor="let dia of dias" style="background-color: white; margin: 10px;">
         <ion-label class="numeros">
-          00
-        </ion-label>
-      </ion-col>
-      <ion-col style="background-color: white; margin: 10px;">
-        <ion-label class="numeros">
-          00
-        </ion-label>
-      </ion-col>
-      <ion-col style="background-color: white; margin: 10px;">
-        <ion-label class="numeros">
-          00
-        </ion-label>
-      </ion-col>
-      <ion-col style="background-color: white; margin: 10px;">
-        <ion-label class="numeros">
-          00
-        </ion-label>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col style="background-color: white; margin: 10px;">
-        <ion-label class="numeros">
-          00
-        </ion-label>
-      </ion-col>
-      <ion-col style="background-color: white; margin: 10px;">
-        <ion-label class="numeros">
-          00
-        </ion-label>
-      </ion-col>
-      <ion-col style="background-color: white; margin: 10px;">
-        <ion-label class="numeros">
-          00
-        </ion-label>
-      </ion-col>
-      <ion-col style="background-color: white; margin: 10px;">
-        <ion-label class="numeros">
-          00
-        </ion-label>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col style="background-color: white; margin: 10px;">
-        <ion-label class="numeros">
-          00
-        </ion-label>
-      </ion-col>
-      <ion-col style="background-color: white; margin: 10px;">
-        <ion-label class="numeros">
-          00
-        </ion-label>
-      </ion-col>
-      <ion-col style="background-color: white; margin: 10px;">
-        <ion-label class="numeros">
-          00
-        </ion-label>
-      </ion-col>
-      <ion-col style="background-color: white; margin: 10px;">
-        <ion-label class="numeros">
-          00
+          {{dia.id_numero}}
         </ion-label>
       </ion-col>
     </ion-row>
   </ion-grid>
 </div>
 
-<hr>
+<br>
+
 <div style="text-align: center;">
   <h3 style="text-align: center;"><b>Noche</b></h3>
   <br><br>
   <ion-grid>
     <ion-row>
-      <ion-col style="background-color: white; margin: 10px;">
+      <ion-col *ngFor="let noche of noches" style="background-color: white; margin: 10px;">
         <ion-label class="numeros">
-          00
-        </ion-label>
-      </ion-col>
-      <ion-col style="background-color: white; margin: 10px;">
-        <ion-label class="numeros">
-          00
-        </ion-label>
-      </ion-col>
-      <ion-col style="background-color: white; margin: 10px;">
-        <ion-label class="numeros">
-          00
-        </ion-label>
-      </ion-col>
-      <ion-col style="background-color: white; margin: 10px;">
-        <ion-label class="numeros">
-          00
-        </ion-label>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col style="background-color: white; margin: 10px;">
-        <ion-label class="numeros">
-          00
-        </ion-label>
-      </ion-col>
-      <ion-col style="background-color: white; margin: 10px;">
-        <ion-label class="numeros">
-          00
-        </ion-label>
-      </ion-col>
-      <ion-col style="background-color: white; margin: 10px;">
-        <ion-label class="numeros">
-          00
-        </ion-label>
-      </ion-col>
-      <ion-col style="background-color: white; margin: 10px;">
-        <ion-label class="numeros">
-          00
-        </ion-label>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col style="background-color: white; margin: 10px;">
-        <ion-label class="numeros">
-          00
-        </ion-label>
-      </ion-col>
-      <ion-col style="background-color: white; margin: 10px;">
-        <ion-label class="numeros">
-          00
-        </ion-label>
-      </ion-col>
-      <ion-col style="background-color: white; margin: 10px;">
-        <ion-label class="numeros">
-          00
-        </ion-label>
-      </ion-col>
-      <ion-col style="background-color: white; margin: 10px;">
-        <ion-label class="numeros">
-          00
+          {{noche.id_numero}}
         </ion-label>
       </ion-col>
     </ion-row>
