@@ -14,7 +14,7 @@ export class NumerosService {
 
   //Numeros del dia
   getNumerosDia(): Observable<Numeros[]>{
-    return this.http.get<Numeros[]>('http://localhost:4000/numero-dia').pipe(
+    return this.http.get<Numeros[]>('https://dcuba.onrender.com/numero-dia').pipe(
       map((res) => res.map((dia) => new Numeros(dia))),
       catchError(handleError)
     );
@@ -22,7 +22,7 @@ export class NumerosService {
 
   //Numeros de la noche
   getNumerosNoche(): Observable<Numeros[]>{
-    return this.http.get<Numeros[]>('http://localhost:4000/numero-noche').pipe(
+    return this.http.get<Numeros[]>('https://dcuba.onrender.com/numero-noche').pipe(
       map((res) => res.map((numeroNoche) => new Numeros(numeroNoche))),
       catchError(handleError)
     );

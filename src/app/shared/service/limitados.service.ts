@@ -15,7 +15,7 @@ export class LimitadosService {
 
   //Limitados del Dia
   getLimitadosDia(): Observable<LimitadosDias[]>{
-    return this.http.get<LimitadosDias[]>('http://localhost:4000/limitados-dia').pipe(
+    return this.http.get<LimitadosDias[]>('https://dcuba.onrender.com/limitados-dia').pipe(
       map((res)=> res.map((limDia) => new LimitadosDias(limDia))),
       catchError(handleError)
     );
@@ -23,7 +23,7 @@ export class LimitadosService {
 
   //Limitados de la Noche
   getLimitadosNoche(): Observable<LimitadosNoches[]>{
-    return this.http.get<LimitadosNoches[]>('http://localhost:4000/limitados-noche').pipe(
+    return this.http.get<LimitadosNoches[]>('https://dcuba.onrender.com/limitados-noche').pipe(
       map((res) => res.map((limNoche) => new LimitadosNoches(limNoche))),
       catchError(handleError)
     )

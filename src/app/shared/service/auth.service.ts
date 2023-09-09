@@ -14,7 +14,7 @@ export class AuthService {
 
   //Login de Usuario
   postLogin(nombre: string, telefono: string ){
-    const url = 'http://localhost:4000/auth';
+    const url = 'https://dcuba.onrender.com/auth';
     const body = {nombre, telefono};
 
     return this.http.post<AuthResponse>(url, body).pipe(

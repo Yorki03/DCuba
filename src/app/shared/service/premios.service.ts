@@ -18,13 +18,13 @@ export class PremiosService {
 
   //Premios Normales
   getpremiosNormalesDia(): Observable<JugadaNormales[]>{
-    return this.http.get<JugadaNormales[]>('http://localhost:4000/premios-jugadas-dia').pipe(
+    return this.http.get<JugadaNormales[]>('https://dcuba.onrender.com/premios-jugadas-dia').pipe(
       map((res) => res.map((premios) => new JugadaNormales(premios))),
       catchError(handleError)
     );
   }
   getpremiosNormalesNoche(): Observable<JugadaNormales[]>{
-    return this.http.get<JugadaNormales[]>('http://localhost:4000/premios-jugadas-noche').pipe(
+    return this.http.get<JugadaNormales[]>('https://dcuba.onrender.com/premios-jugadas-noche').pipe(
       map((res) => res.map((premios) => new JugadaNormales(premios))),
       catchError(handleError)
     );
@@ -32,13 +32,13 @@ export class PremiosService {
 
   //Premios Centenas
   grtPremiosCentenaDia(): Observable<JugadaCentenas[]>{
-    return this.http.get<JugadaCentenas[]>('http://localhost:4000/premios-centena-dia').pipe(
+    return this.http.get<JugadaCentenas[]>('https://dcuba.onrender.com/premios-centena-dia').pipe(
       map((res) => res.map((premios)=> new JugadaCentenas(premios))),
       catchError(handleError)
     );
   }
   grtPremiosCentenaNoche(): Observable<JugadaCentenas[]>{
-    return this.http.get<JugadaCentenas[]>('http://localhost:4000/premios-centena-noche').pipe(
+    return this.http.get<JugadaCentenas[]>('https://dcuba.onrender.com/premios-centena-noche').pipe(
       map((res) => res.map((premios)=> new JugadaCentenas(premios))),
       catchError(handleError)
     );
@@ -47,13 +47,13 @@ export class PremiosService {
   /*******************************************************************************************************/
   /*Premios del dia*/
   grtPremiosCorridoDia1(): Observable<JugadaCorridas[]>{
-    return this.http.get<JugadaCorridas[]>('http://localhost:4000/premios-corridos1-dia').pipe(
+    return this.http.get<JugadaCorridas[]>('https://dcuba.onrender.com/premios-corridos1-dia').pipe(
       map((res) => res.map((premios)=> new JugadaCorridas(premios))),
       catchError(handleError)
     );
   }
   grtPremiosCorridoDia2(): Observable<JugadaCorridas[]>{
-    return this.http.get<JugadaCorridas[]>('http://localhost:4000/premios-corridos2-dia').pipe(
+    return this.http.get<JugadaCorridas[]>('https://dcuba.onrender.com/premios-corridos2-dia').pipe(
       map((res) => res.map((premios)=> new JugadaCorridas(premios))),
       catchError(handleError)
     );
@@ -61,13 +61,13 @@ export class PremiosService {
 
   /*Premios del noche*/
   grtPremiosCorridoNoche1(): Observable<JugadaCorridas[]>{
-    return this.http.get<JugadaCorridas[]>('http://localhost:4000/premios-corridos1-noche').pipe(
+    return this.http.get<JugadaCorridas[]>('https://dcuba.onrender.com/premios-corridos1-noche').pipe(
       map((res) => res.map((premios)=> new JugadaCorridas(premios))),
       catchError(handleError)
     );
   }
   grtPremiosCorridoNoche2(): Observable<JugadaCorridas[]>{
-    return this.http.get<JugadaCorridas[]>('http://localhost:4000/premios-corridos2-noche').pipe(
+    return this.http.get<JugadaCorridas[]>('https://dcuba.onrender.com/premios-corridos2-noche').pipe(
       map((res) => res.map((premios)=> new JugadaCorridas(premios))),
       catchError(handleError)
     );
@@ -76,19 +76,19 @@ export class PremiosService {
   /*****************************************Premios Parles****************************************************/
   //Premios de dia
   grtPremiosParlesDiaFijo1(): Observable<JugadaParles[]>{
-    return this.http.get<JugadaParles[]>('http://localhost:4000/premios-parles-dia-fijo1').pipe(
+    return this.http.get<JugadaParles[]>('https://dcuba.onrender.com/premios-parles-dia-fijo1').pipe(
       map((res) => res.map((parles)=> new JugadaParles(parles))),
       catchError(handleError)
     );
   }
   grtPremiosParlesDiaFijo2(): Observable<JugadaParles[]>{
-    return this.http.get<JugadaParles[]>('http://localhost:4000/premios-parles-dia-fijo2').pipe(
+    return this.http.get<JugadaParles[]>('https://dcuba.onrender.com/premios-parles-dia-fijo2').pipe(
       map((res) => res.map((parles)=> new JugadaParles(parles))),
       catchError(handleError)
     );
   }
   grtPremiosParlesDiaCorrido(): Observable<JugadaParles[]>{
-    return this.http.get<JugadaParles[]>('http://localhost:4000/premios-parles-dia-corrido').pipe(
+    return this.http.get<JugadaParles[]>('https://dcuba.onrender.com/premios-parles-dia-corrido').pipe(
       map((res) => res.map((parles)=> new JugadaParles(parles))),
       catchError(handleError)
     );
@@ -96,19 +96,19 @@ export class PremiosService {
 
   //Premios de la noche
   grtPremiosParlesNocheFijo1(): Observable<JugadaParles[]>{
-    return this.http.get<JugadaParles[]>('http://localhost:4000/premios-parles-noche-fijo1').pipe(
+    return this.http.get<JugadaParles[]>('https://dcuba.onrender.com/premios-parles-noche-fijo1').pipe(
       map((res) => res.map((parles)=> new JugadaParles(parles))),
       catchError(handleError)
     );
   }
   grtPremiosParlesNocheFijo2(): Observable<JugadaParles[]>{
-    return this.http.get<JugadaParles[]>('http://localhost:4000/premios-parles-noche-fijo2').pipe(
+    return this.http.get<JugadaParles[]>('https://dcuba.onrender.com/premios-parles-noche-fijo2').pipe(
       map((res) => res.map((parles)=> new JugadaParles(parles))),
       catchError(handleError)
     );
   }
   grtPremiosParlesNocheCorrido(): Observable<JugadaParles[]>{
-    return this.http.get<JugadaParles[]>('http://localhost:4000/premios-parles-noche-corrido').pipe(
+    return this.http.get<JugadaParles[]>('https://dcuba.onrender.com/premios-parles-noche-corrido').pipe(
       map((res) => res.map((parles)=> new JugadaParles(parles))),
       catchError(handleError)
     );

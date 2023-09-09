@@ -15,7 +15,7 @@ export class JugadasService {
 
   //Jugadas normales
   postNormales(dinero_fijo: number, estado:string, telefono:string, id_numero: number){
-    const url = 'http://localhost:4000/normal';
+    const url = 'https://dcuba.onrender.com/normal';
     const body = {dinero_fijo, estado, telefono, id_numero};
     return this.http.post<JugadasNormales>(url, body).pipe( 
       map(res => res.ok),
@@ -25,7 +25,7 @@ export class JugadasService {
 
   //Jugada de Corridos
   postCorrido(telefono: string, estado: string, dinero: number, id_numero: number){
-    const url = 'http://localhost:4000/corridas';
+    const url = 'https://dcuba.onrender.com/corridas';
     const body = {telefono, estado, dinero, id_numero};
     return this.http.post<JugadaCorrida>(url, body).pipe(
       map(res => res.ok),
@@ -35,7 +35,7 @@ export class JugadasService {
 
   //Jugadas Parles
   postParles(dinero: number, telefono:string, estado: string, id_numero1: number, id_numero2:number){
-    const url = 'http://localhost:4000/parles';
+    const url = 'https://dcuba.onrender.com/parles';
     const body = {dinero, telefono, estado, id_numero1, id_numero2};
 
     return this.http.post<JugadasParles>(url, body).pipe(
@@ -46,7 +46,7 @@ export class JugadasService {
 
   //Jugadas Centenas
   postCentenas( dinero:number, numero:number, estado:string, telefono:string, id_numero:number){
-    const url = 'http://localhost:4000/centenas';
+    const url = 'https://dcuba.onrender.com/centenas';
     const body = {dinero, numero, estado, telefono, id_numero};
 
     return this.http.post<JugadasCentenas>(url, body).pipe(
