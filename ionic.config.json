@@ -1,5 +1,7 @@
 {
   "name": "dcuba",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
