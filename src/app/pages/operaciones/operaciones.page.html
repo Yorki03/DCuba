@@ -1,0 +1,104 @@
+
+<ion-menu contentId="main-content" side="end" contentId="main-content">
+  <ion-header [translucent]="true">
+    <ion-toolbar color="tertiary">
+      <ion-title><b>Operaciones</b></ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+
+    <h4 style="text-align: center;"><b>Resumen de Jugadas</b></h4>
+
+    <ion-button routerLink="/operaciones/historial" color="success">
+      <ion-icon name="reader"></ion-icon>
+      <b>Historial de Jugadas</b>
+    </ion-button>
+    <br>
+
+    <ion-button routerLink="/operaciones/historial-parles" color="success">
+      <ion-icon name="reader"></ion-icon>
+      <b>Historial de Parleses</b>
+    </ion-button>
+    <br>
+
+    <ion-button routerLink="/operaciones/historial-centena" color="success">
+      <ion-icon name="reader"></ion-icon>
+      <b>Historial de Centenas</b>
+    </ion-button>
+    <hr>
+
+    <h4 style="text-align: center;"><b>Estadisticas de Premios</b></h4>
+
+    <ion-button routerLink="/operaciones/premio-centena" color="danger">
+      <ion-icon name="star-half"></ion-icon>
+      <b>Premios de Centena</b>
+    </ion-button>
+
+    <ion-button routerLink="/operaciones/premio-corrida" color="danger">
+      <ion-icon name="star-half"></ion-icon>
+      <b>Premios de Corridos</b>
+    </ion-button>
+
+    <ion-button routerLink="/operaciones/premio-parles" color="danger">
+      <ion-icon name="star-half"></ion-icon>
+      <b>Premios de Parles</b>
+    </ion-button>
+    <hr>
+    
+    <h4 style="text-align: center;"><b>Jugadas de Carrileras</b></h4>
+
+    <ion-button routerLink="/operaciones/carrileras" color="secondary">
+      <ion-icon name="layers"></ion-icon>
+      <b>Carrileras Normales</b>
+    </ion-button>
+    <br>
+
+    <ion-button routerLink="/operaciones/carrileras-parles" color="warning">
+      <ion-icon name="server"></ion-icon>
+      <b>Carrileras de Parleses</b>
+    </ion-button>
+    <br>
+
+  </ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main-content">
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title size="large"><b>Operaciones</b></ion-title>
+      <ion-buttons slot="end">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="background" [fullscreen]="true"> 
+
+    <ion-tabs>
+
+      <ion-tab-bar slot="bottom">
+        
+        <ion-tab-button tab="numeros">
+          <ion-icon name="bulb"></ion-icon>
+          <ion-label style="font-size: 15px; margin: 5px;"><b>Numeros</b></ion-label>
+        </ion-tab-button>
+  
+        <ion-tab-button tab="jugadas">
+          <ion-icon name="dice"></ion-icon>
+          <ion-label style="font-size: 15px; margin: 5px;"><b>Jugadas</b></ion-label>
+        </ion-tab-button>
+  
+        <ion-tab-button tab="limitados">
+          <ion-icon name="cut"></ion-icon>
+          <ion-label style="font-size: 15px; margin: 5px;"><b>Limitados</b></ion-label>
+        </ion-tab-button>
+  
+      </ion-tab-bar>
+  
+    </ion-tabs>
+
+  </ion-content>
+</div>
+
+

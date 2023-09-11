@@ -1,0 +1,8 @@
+{
+  "name": "dcuba",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>limitados</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background" [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">limitados</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<div style="text-align: center;">
+  <h2><b>Limitados</b></h2>
+  <br>
+  <ion-datetime-button disabled="true" datetime="datetime"></ion-datetime-button>
+
+    <ion-modal [keepContentsMounted]="true">
+      <ng-template>
+        <ion-datetime id="datetime"></ion-datetime>
+      </ng-template>
+    </ion-modal>
+</div>
+<br>
+<div style="text-align: center;">
+  <h3 style="text-align: center;"><b>Mediodia</b></h3>
+  <br><br>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let dia of dias" style="background-color: white; margin: 10px;">
+        <ion-label class="numeros">
+          {{dia.id_numero}}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+
+<br>
+
+<div style="text-align: center;">
+  <h3 style="text-align: center;"><b>Noche</b></h3>
+  <br><br>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let noche of noches" style="background-color: white; margin: 10px;">
+        <ion-label class="numeros">
+          {{noche.id_numero}}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+</ion-content>
