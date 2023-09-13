@@ -30,7 +30,6 @@ export class JugadasPage {
   }
 
   jugadasCentenas: any ={
-    numero: '',
     dinero: '',
     id_numero: ''
   }

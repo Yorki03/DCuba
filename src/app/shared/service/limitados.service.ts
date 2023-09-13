@@ -3,8 +3,9 @@ import { Injectable } from '@angular/core';
 import { Observable, catchError, map } from 'rxjs';
 
 import { handleError } from '../functions/http-error';
-import { LimitadosDias } from 'src/app/pages/operaciones/components/limitados/models/limitados-dias';
-import { LimitadosNoches } from 'src/app/pages/operaciones/components/limitados/models/limitados-noches';
+
+import { LimitadosDias } from 'src/app/pages/operaciones/components/limitados/models/limitadosDias';
+import { LimitadosNoches } from 'src/app/pages/operaciones/components/limitados/models/limitadosNoche';
 
 @Injectable({
   providedIn: 'root'

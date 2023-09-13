@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HistorialService } from 'src/app/shared/service/historial.service';
+import { Variables } from '../../utils/variables';
+import { FunctionJugadaCorrida } from './function/get-jugadas-corrido';
 
 @Component({
   selector: 'app-historial-corrida',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistorialCorridaPage implements OnInit {
 
-  constructor() { }
+  variables = new Variables;
+  constructor(private historiaService: HistorialService) { }
 
   ngOnInit() {
+    FunctionJugadaCorrida.getAll(
+      this.historiaService,
+      this.variables
+    );
   }
 
 }

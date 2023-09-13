@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { HistorialService } from 'src/app/shared/service/historial.service';
-import { Normales } from './models/normales';
-
-
+import { Variables } from '../../utils/variables';
+import { FunctionJugadasNormales } from './function/get-jugadas-normales';
 
 @Component({
   selector: 'app-historial',
@@ -12,18 +11,17 @@ import { Normales } from './models/normales';
 })
 export class HistorialPage implements OnInit {
 
-  normales: Normales[] = [];
+  variables = new Variables;
 
   constructor(private historialService: HistorialService) { }
 
   ngOnInit() {
-    this.historialService.getNormales().subscribe({
-      next:(normal) => {
-        this.normales = normal;
-      },error:(err) => {
-        console.log(err);
-      },
-    });
+
+    FunctionJugadasNormales.getAll(
+      this.historialService,
+      this.variables
+    );
+    
   }
 
   

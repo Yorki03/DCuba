@@ -4,10 +4,113 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content class="background" [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">premio-parles</ion-title>
     </ion-toolbar>
   </ion-header>
+  <br>
+
+  <ion-list >
+    <ion-item-group>
+      <ion-item-divider color="warning">
+        <h5 style="text-align: center; color: black;"><b>Premios Pareles</b></h5>
+      </ion-item-divider>
+      <ion-item-divider color="success">
+        
+        <h5 style="text-align: center; color: black;">
+          <ion-icon name="cash">
+          </ion-icon> <b>Dinero: 0</b>
+      </h5>
+      </ion-item-divider>
+      
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col><b>#1</b></ion-col>
+            <ion-col><b>#2</b></ion-col>
+            <ion-col><b>Tel</b></ion-col>
+            <ion-col><b>Estado</b></ion-col>
+            <ion-col><b>Dinero</b></ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+
+      <ion-item *ngFor="let premios of variabes.premiosJugadasParlesDiasFijo1">
+        <ion-grid>
+          <ion-row>
+            <ion-col>{{premios.idNumero1}}</ion-col>
+            <ion-col>{{premios.idNumero2}}</ion-col>
+            <ion-col>{{premios.Telefono}}</ion-col>
+            <ion-col>{{premios.Estado}}</ion-col>
+            <ion-col>{{premios.Dinero}}</ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+
+      
+      <ion-item *ngFor="let premios of variabes.premiosJugadasParlesDiasFijo2">
+        <ion-grid>
+          <ion-row>
+            <ion-col>{{premios.idNumero1}}</ion-col>
+            <ion-col>{{premios.idNumero2}}</ion-col>
+            <ion-col>{{premios.Telefono}}</ion-col>
+            <ion-col>{{premios.Estado}}</ion-col>
+            <ion-col>{{premios.Dinero}}</ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+
+      <ion-item *ngFor="let premios of variabes.premiosJugadasParlesDiasCorrido">
+        <ion-grid>
+          <ion-row>
+            <ion-col>{{premios.idNumero1}}</ion-col>
+            <ion-col>{{premios.idNumero2}}</ion-col>
+            <ion-col>{{premios.Telefono}}</ion-col>
+            <ion-col>{{premios.Estado}}</ion-col>
+            <ion-col>{{premios.Dinero}}</ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+
+      <ion-item *ngFor="let premios of variabes.premiosJugadasParlesNocheFijo1">
+        <ion-grid>
+          <ion-row>
+            <ion-col>{{premios.idNumero1}}</ion-col>
+            <ion-col>{{premios.idNumero2}}</ion-col>
+            <ion-col>{{premios.Telefono}}</ion-col>
+            <ion-col>{{premios.Estado}}</ion-col>
+            <ion-col>{{premios.Dinero}}</ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+
+      <ion-item *ngFor="let premios of variabes.premiosJugadasParlesNocheFijo2">
+        <ion-grid>
+          <ion-row>
+            <ion-col>{{premios.idNumero1}}</ion-col>
+            <ion-col>{{premios.idNumero2}}</ion-col>
+            <ion-col>{{premios.Telefono}}</ion-col>
+            <ion-col>{{premios.Estado}}</ion-col>
+            <ion-col>{{premios.Dinero}}</ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+
+      <ion-item *ngFor="let premios of variabes.premiosJugadasParlesNocheCorrido">
+        <ion-grid>
+          <ion-row>
+            <ion-col>{{premios.idNumero1}}</ion-col>
+            <ion-col>{{premios.idNumero2}}</ion-col>
+            <ion-col>{{premios.Telefono}}</ion-col>
+            <ion-col>{{premios.Estado}}</ion-col>
+            <ion-col>{{premios.Dinero}}</ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+
+    </ion-item-group>
+  </ion-list>
+
 </ion-content>

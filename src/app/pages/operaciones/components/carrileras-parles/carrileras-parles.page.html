@@ -4,10 +4,103 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content class="background" [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">carrileras-parles</ion-title>
     </ion-toolbar>
   </ion-header>
+  <br>
+
+  <div style="text-align: center;">
+    <ion-datetime-button disabled="true" datetime="datetime"></ion-datetime-button>
+
+    <ion-modal [keepContentsMounted]="true">
+      <ng-template>
+        <ion-datetime id="datetime"></ion-datetime>
+      </ng-template>
+    </ion-modal>
+    <br>
+    
+    <ion-checkbox [(ngModel)]="opcion1" (ionChange)="opcion1Changed()"><b>Mediodia</b></ion-checkbox>
+    
+    <ion-checkbox  [(ngModel)]="opcion2" (ionChange)="opcion2Changed()"><b>Noche</b></ion-checkbox>
+
+  </div>
+  <br>
+
+  <div style="margin: 20px;">
+    <h4 style="text-align: center"><b>Validacion de las Jugadas:</b></h4>
+    <ion-grid>
+      <ion-row>
+        <ion-col><b>Telefono</b></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div style="display: flex;">
+            <ion-input class="campos" [(ngModel)]="movillUser.telefono" label="Telefono" labelPlacement="floating"  type="tel" name="telefono" aria-required="true" fill="solid"></ion-input>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <br>
+
+  <form>
+
+    <div style="margin: 20px;">
+      <h4 style="text-align: center"><b>Corridas de No. jugados:</b></h4>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-label ><b>No. 1</b></ion-label>
+            <br><br>
+            <ion-input class="campos-numero" [(ngModel)]="jugadasParlesCorridas.numero1" label="00" labelPlacement="floating" type="text" name="numero" aria-required="true" fill="solid"></ion-input>
+          </ion-col>
+
+          <ion-col>
+            <ion-label ><b>No. 2</b></ion-label>
+            <br><br>
+            <ion-input class="campos-numero" [(ngModel)]="jugadasParlesCorridas.numero2" label="00" labelPlacement="floating" type="text" name="numero" aria-required="true" fill="solid"></ion-input>
+          </ion-col>
+
+          <ion-col>
+            <ion-label ><b>Fijo</b></ion-label>
+            <br><br>
+            <ion-input class="campos-numero-importe" [(ngModel)]="jugadasParlesCorridas.dinero_fijo" label="$0.00" labelPlacement="floating" type="number" name="fijo" aria-required="true" fill="solid"></ion-input>
+          </ion-col>
+          
+        </ion-row>
+      </ion-grid>
+      <ion-button class="ini_button" (click)="jugadaCarrileraParles()" expand="full">Enviar Carrileras</ion-button>
+    </div>
+
+    <div style="margin: 20px;">
+      <h4 style="text-align: center"><b>Corridas de Terminales:</b></h4>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-label ><b>Numero</b></ion-label>
+            <br><br>
+            <ion-input class="campos-numero" [(ngModel)]="jugadasCorridaTerminales.numero" label="00" labelPlacement="floating" type="text" name="numero" aria-required="true" fill="solid"></ion-input>
+          </ion-col>
+          
+          <ion-col>
+            <ion-label ><b>Fijo</b></ion-label>
+            <br><br>
+            <ion-input class="campos-numero-importe" [(ngModel)]="jugadasCorridaTerminales.dinero_fijo" label="$0.00" labelPlacement="floating" type="number" name="fijo" aria-required="true" fill="solid"></ion-input>
+          </ion-col>
+          
+          <ion-col>
+            <ion-label ><b>Corrido</b></ion-label>
+            <br>
+            <br>
+            <ion-input class="campos-numero-importe" [(ngModel)]="jugadasCorridaTerminales.dinero_corrido" label="$0.00" labelPlacement="floating" type="number" name="corrido" aria-required="true" fill="solid"></ion-input>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-button class="ini_button" (click)="jugadaTerminalParles()" expand="full">Enviar Terminales</ion-button>
+    </div>
+
+  </form>
 </ion-content>

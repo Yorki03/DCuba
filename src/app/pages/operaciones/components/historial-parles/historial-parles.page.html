@@ -30,7 +30,10 @@
       </ion-item-divider>
       <ion-item-divider color="success">
         
-        <h5 style="text-align: center; color: black;"><ion-icon name="cash"></ion-icon> <b>  Dinero: 0</b></h5>
+        <h5 style="text-align: center; color: black;">
+          <ion-icon name="cash"></ion-icon> 
+          <b>  Dinero: 0</b>
+      </h5>
       </ion-item-divider>
       
       <ion-item>
@@ -45,7 +48,7 @@
         </ion-grid>
       </ion-item>
 
-      <ion-item *ngFor="let parle of parles">
+      <ion-item *ngFor="let parle of variables.historialJugadasParles">
         <ion-grid>
           <ion-row>
             <ion-col>{{parle.idNumero1}}</ion-col>

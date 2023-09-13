@@ -39,20 +39,19 @@
             <ion-col><b>#</b></ion-col>
             <ion-col><b>Tel</b></ion-col>
             <ion-col><b>Estado</b></ion-col>
-            <ion-col><b>D.Fijo</b></ion-col>
-            <ion-col><b>D.Corrido</b></ion-col>
+            <ion-col><b>Dinero</b></ion-col>
           </ion-row>
         </ion-grid>
       </ion-item>
 
-      <ion-item *ngFor="let normal of normales">
+      <ion-item *ngFor="let normal of variables.historialJugadasNormales">
         <ion-grid>
           <ion-row>
             <ion-col>{{normal.idNumero}}</ion-col>
             <ion-col>{{normal.Telefono}}</ion-col>
             <ion-col>{{normal.Estado}}</ion-col>
-            <ion-col>{{normal.dineroFijo}}</ion-col>
-            <ion-col>{{normal.dineroCorrido}}</ion-col>
+            <ion-col>{{normal.Dinero}}</ion-col>
+            
           </ion-row>
         </ion-grid>
       </ion-item>

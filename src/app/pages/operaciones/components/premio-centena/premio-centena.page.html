@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+z<ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>premio-centena</ion-title>
   </ion-toolbar>
@@ -10,4 +10,53 @@
       <ion-title size="large">premio-centena</ion-title>
     </ion-toolbar>
   </ion-header>
+  <br>
+
+  <ion-list >
+    <ion-item-group>
+      <ion-item-divider color="warning">
+        <h5 style="text-align: center; color: black;"><b>Premios Fijos</b></h5>
+      </ion-item-divider>
+      <ion-item-divider color="success">
+        
+        <h5 style="text-align: center; color: black;">
+          <ion-icon name="cash">
+          </ion-icon> <b>Dinero: 0</b>
+      </h5>
+      </ion-item-divider>
+      
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col><b>Cent</b></ion-col>
+            <ion-col><b>Tel</b></ion-col>
+            <ion-col><b>Estado</b></ion-col>
+            <ion-col><b>Dinero</b></ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+
+      <ion-item *ngFor="let premios of variables.premiosJugadasCentenaDias">
+        <ion-grid>
+          <ion-row>
+            <ion-col>{{premios.Centena}}</ion-col>
+            <ion-col>{{premios.Telefono}}</ion-col>
+            <ion-col>{{premios.Estado}}</ion-col>
+            <ion-col>{{premios.Dinero}}</ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+
+      <ion-item *ngFor="let premios of variables.premiosJugadasCentenaNoches">
+        <ion-grid>
+          <ion-row>
+            <ion-col>{{premios.Centena}}</ion-col>
+            <ion-col>{{premios.Telefono}}</ion-col>
+            <ion-col>{{premios.Estado}}</ion-col>
+            <ion-col>{{premios.Dinero}}</ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-item-group>
+  </ion-list>
 </ion-content>

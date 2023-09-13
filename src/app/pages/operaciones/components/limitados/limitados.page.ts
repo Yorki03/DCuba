@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { LimitadosService } from 'src/app/shared/service/limitados.service';
-import { LimitadosDias } from './models/limitados-dias';
-import { LimitadosNoches } from './models/limitados-noches';
-
-
-
+import { Variables } from '../../utils/variables';
+import { FunctionLimitadosDia } from './functions/get-limitado-dia';
+import { FunctionLimitadosNoche } from './functions/get-limitado-noche';
 
 @Component({
   selector: 'app-limitados',
@@ -13,30 +11,25 @@ import { LimitadosNoches } from './models/limitados-noches';
   styleUrls: ['./limitados.page.scss'],
 })
 export class LimitadosPage implements OnInit {
-  dias: LimitadosDias[] = [];
-  noches: LimitadosNoches[] = [];
+
+  variables = new Variables;
 
   constructor(private limitadosService: LimitadosService) { }
 
   ngOnInit(): void {
     
-    //Lamar a los numeros limitados del medio dia
-   this.limitadosService.getLimitadosDia().subscribe({
-    next:(dia)=>{
-      this.dias = dia;
-    }, error:(error)=>{
-      console.log(error);      
-    }
-   });
+   //Lamar a los numeros limitados del medio dia
+   FunctionLimitadosDia.getAll(
+    this.limitadosService,
+    this.variables
+   );
 
    //Lamar a los numeros limitados de la noche
-   this.limitadosService.getLimitadosNoche().subscribe({
-    next:(noche)=>{
-      this.noches = noche;
-    }, error:(error)=>{
-      console.log(error);      
-    }
-   });
+   FunctionLimitadosNoche.getAll(
+    this.limitadosService,
+    this.variables
+   );
+   
   }
 
 }

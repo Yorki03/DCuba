@@ -28,7 +28,7 @@
   <br><br>
   <ion-grid>
     <ion-row>
-      <ion-col *ngFor="let dia of dias" style="background-color: white; margin: 10px;">
+      <ion-col *ngFor="let dia of variables.limitadosDias" style="background-color: white; margin: 10px;">
         <ion-label class="numeros">
           {{dia.id_numero}}
         </ion-label>
@@ -44,7 +44,7 @@
   <br><br>
   <ion-grid>
     <ion-row>
-      <ion-col *ngFor="let noche of noches" style="background-color: white; margin: 10px;">
+      <ion-col *ngFor="let noche of variables.numerosNoches" style="background-color: white; margin: 10px;">
         <ion-label class="numeros">
           {{noche.id_numero}}
         </ion-label>

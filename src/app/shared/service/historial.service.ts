@@ -3,9 +3,11 @@ import { Injectable } from '@angular/core';
 import { Observable, catchError, map } from 'rxjs';
 
 import { handleError } from '../functions/http-error';
-import { Normales } from 'src/app/pages/operaciones/components/historial/models/normales';
-import { Parles } from 'src/app/pages/operaciones/components/historial-parles/models/parles';
-import { Centenas } from 'src/app/pages/operaciones/components/historial-centena/models/centenas';
+
+import { JugadaNormales } from 'src/app/pages/operaciones/components/historial/model/jugadaNormales';
+import { JugadaCentenas } from 'src/app/pages/operaciones/components/historial-centena/model/jugadaCentena';
+import { JugadaCorridas } from 'src/app/pages/operaciones/components/historial-corrida/model/jugdaCorrido';
+import { JugadaParles } from 'src/app/pages/operaciones/components/historial-parles/model/jugadaParles';
 
 
 @Injectable({
@@ -16,31 +18,40 @@ export class HistorialService {
   constructor(private http: HttpClient) { }
 
   //LLamar a Jugadas Normales
-  getNormales(): Observable<Normales[]>{
+  jugadasNormales(): Observable<JugadaNormales[]>{
     
     const url = `https://dcuba.onrender.com/jugadas_normales`;
-    return this.http.get<Normales[]>(url).pipe(
-      map((res) => res.map((normal)=> new Normales(normal))),
+    return this.http.get<JugadaNormales[]>(url).pipe(
+      map((res) => res.map((normal)=> new JugadaNormales(normal))),
+      catchError(handleError)
+    );
+  }
+
+  //LLamar a Jugadas Corridas
+  jugadasCorridas(): Observable<JugadaCorridas[]>{
+    const url = 'https://dcuba.onrender.com/jugadas_corrida'
+    return this.http.get<JugadaCorridas[]>(url).pipe(
+      map((res) => res.map((corrida) => new JugadaCorridas(corrida))),
       catchError(handleError)
     );
   }
 
   //LLamar a Jugadas Parles
-  getParles(): Observable<Parles[]>{
+  jugadasParleses(): Observable<JugadaParles[]>{
     
     const url = `https://dcuba.onrender.com/jugadas_parles`;
-    return this.http.get<Parles[]>(url).pipe(
-      map((res) => res.map((parle) => new Parles(parle))),
+    return this.http.get<JugadaParles[]>(url).pipe(
+      map((res) => res.map((parle) => new JugadaParles(parle))),
       catchError(handleError)
     );
   }
 
   //LLamar a Jugadas Centenas
-  getCentena(): Observable<Centenas[]>{
+  jugadasCentenas(): Observable<JugadaCentenas[]>{
 
     const url = `https://dcuba.onrender.com/jugadas_centenas`;
-    return this.http.get<Centenas[]>(url).pipe(
-      map((res) => res.map((centena) => new Centenas(centena))),
+    return this.http.get<JugadaCentenas[]>(url).pipe(
+      map((res) => res.map((centena) => new JugadaCentenas(centena))),
       catchError(handleError)
     )
   }

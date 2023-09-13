@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { NumerosService } from 'src/app/shared/service/numeros.service';
-import { Numeros } from './models/numeros';
+import { FunctionNumerosDia } from './functions/get-numerosDias';
+import { Variables } from '../../utils/variables';
+import { FunctionNumerosNoche } from './functions/get-numerosNoche';
 
 @Component({
   selector: 'app-numeros',
@@ -10,8 +12,7 @@ import { Numeros } from './models/numeros';
 })
 export class NumerosPage implements OnInit {
 
-  dias: Numeros[] = [];
-  noches: Numeros[] = [];
+  variables = new Variables;
   horaInicialDia: number = 8;
   horaCierreDia: number = 12;
   horaInicialNoche: number = 2;
@@ -25,22 +26,16 @@ export class NumerosPage implements OnInit {
   ngOnInit() {
 
     //Llamar numeros del dia
-    this.numerosService.getNumerosDia().subscribe({
-      next:(dia)=>{
-        this.dias = dia;        
-      },error:(error)=>{
-        console.log(error);
-      }
-    });
+    FunctionNumerosDia.getAll(
+      this.numerosService,
+      this.variables
+    )
 
     //Llamar numeros de la noche
-    this.numerosService.getNumerosNoche().subscribe({
-      next:(noche)=>{
-        this.noches = noche;
-      },error:(error)=>{
-        console.log(error);        
-      }
-    });
+    FunctionNumerosNoche.getAll(
+      this.numerosService,
+      this.variables
+    )
 
    //Hora limite de Dia
    if(this.horaInicialDia >= this.horaActual.getHours() && 

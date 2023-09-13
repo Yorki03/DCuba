@@ -10,4 +10,54 @@
       <ion-title size="large">historial-corrida</ion-title>
     </ion-toolbar>
   </ion-header>
+  <br>
+
+  <div style="text-align: center;">
+    <ion-datetime-button disabled="true" datetime="datetime"></ion-datetime-button>
+
+    <ion-modal [keepContentsMounted]="true">
+      <ng-template>
+        <ion-datetime id="datetime"></ion-datetime>
+      </ng-template>
+    </ion-modal> 
+  </div>
+  <br>
+
+  <ion-list >
+    <ion-item-group>
+      <ion-item-divider color="warning">
+        <h5 style="text-align: center; color: black;"><b>Jugadas Normales</b></h5>
+      </ion-item-divider>
+      <ion-item-divider color="success">
+        
+        <h5 style="text-align: center; color: black;">
+          <ion-icon name="cash"></ion-icon> 
+          <b>  Dinero: 0</b>
+        </h5>
+      </ion-item-divider>
+      
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col><b>#</b></ion-col>
+            <ion-col><b>Tel</b></ion-col>
+            <ion-col><b>Estado</b></ion-col>
+            <ion-col><b>Dinero</b></ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+
+      <ion-item *ngFor="let corrida of variables.historialJugadasCorrida">
+        <ion-grid>
+          <ion-row>
+            <ion-col>{{corrida.idNumero}}</ion-col>
+            <ion-col>{{corrida.Telefono}}</ion-col>
+            <ion-col>{{corrida.Estado}}</ion-col>
+            <ion-col>{{corrida.Dinero}}</ion-col>
+            
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-item-group>
+  </ion-list>
 </ion-content>

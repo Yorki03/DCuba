@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Variables } from '../../utils/variables';
+import { PremiosService } from 'src/app/shared/service/premios.service';
+import { FunctionJugadaCorridaDia } from './function/get-corrida-dia';
+import { FunctionJugadaCorridaNoche } from './function/get-corrida-noche';
 
 @Component({
   selector: 'app-premio-corrida',
@@ -7,9 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PremioCorridaPage implements OnInit {
 
-  constructor() { }
+  variables = new Variables;
+  constructor(private premioService: PremiosService) { }
 
   ngOnInit() {
+    FunctionJugadaCorridaDia.getAll(
+      this.premioService,
+      this.variables
+    );
+
+    FunctionJugadaCorridaNoche.getAll(
+      this.premioService,
+      this.variables
+    );
   }
 
 }

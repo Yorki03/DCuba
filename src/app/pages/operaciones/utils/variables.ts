@@ -2,11 +2,10 @@ import { JugadaCentenas } from "../components/historial-centena/model/jugadaCent
 import { JugadaCorridas } from "../components/historial-corrida/model/jugdaCorrido";
 import { JugadaParles } from "../components/historial-parles/model/jugadaParles";
 import { JugadaNormales } from "../components/historial/model/jugadaNormales";
+import { DineroTotal } from "../models/dinero-total";
 import { LimitadosDias } from "../components/limitados/models/limitadosDias";
 import { LimitadosNoches } from "../components/limitados/models/limitadosNoche";
 import { NumerosSalidos } from "../components/numeros/models/numerosSalidos";
-import { Dinero } from "../models/dinero";
-import { DineroTotal } from "../models/dinero-total";
 
 export class Variables{
     numerosDias: NumerosSalidos[] = [];

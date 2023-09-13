@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { HistorialService } from 'src/app/shared/service/historial.service';
-import { Parles } from './models/parles';
+import { Variables } from '../../utils/variables';
+import { FunctionJugadasParles } from './function/get-jugada-parles';
 
 @Component({
   selector: 'app-historial-parles',
@@ -10,18 +11,15 @@ import { Parles } from './models/parles';
 })
 export class HistorialParlesPage implements OnInit {
 
-  parles: Parles[] = [];
+  variables = new Variables;
 
   constructor(private historialService: HistorialService) { }
 
   ngOnInit() {
-    this.historialService.getParles().subscribe({
-      next:(parle) => {
-        this.parles = parle;
-      },error:(err) => {
-        console.log(err);
-      },
-    });
+    FunctionJugadasParles.getAll(
+      this.historialService,
+      this.variables
+    )
   }
 
 }

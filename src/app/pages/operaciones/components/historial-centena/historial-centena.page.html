@@ -29,14 +29,16 @@
         <h5 style="text-align: center; color: black;"><b>Jugadas con Centenas</b></h5>
       </ion-item-divider>
       <ion-item-divider color="success">
-        <h5 style="text-align: center; color: black;"><ion-icon name="cash"></ion-icon> <b>  Dinero: 0</b></h5>
+        <h5 style="text-align: center; color: black;">
+          <ion-icon name="cash"></ion-icon> 
+          <b> Dinero: 0</b>
+        </h5>
       </ion-item-divider>
       
       <ion-item>
         <ion-grid>
           <ion-row>
             <ion-col><b>Cen</b></ion-col>
-            <ion-col><b>#</b></ion-col>
             <ion-col><b>Tel</b></ion-col>
             <ion-col><b>Estado</b></ion-col>
             <ion-col><b>Dinero</b></ion-col>
@@ -44,11 +46,10 @@
         </ion-grid>
       </ion-item>
 
-      <ion-item *ngFor="let centena of centenas">
+      <ion-item *ngFor="let centena of variables.historialJugadasCentena">
         <ion-grid>
           <ion-row>
             <ion-col>{{centena.Centena}}</ion-col>
-            <ion-col>{{centena.idNumero}}</ion-col>
             <ion-col>{{centena.Telefono}}</ion-col>
             <ion-col>{{centena.Estado}}</ion-col>
             <ion-col>{{centena.Dinero}}</ion-col>

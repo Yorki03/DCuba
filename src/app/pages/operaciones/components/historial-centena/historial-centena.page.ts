@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { HistorialService } from 'src/app/shared/service/historial.service';
-
-import { Centenas } from './models/centenas';
+import { Variables } from '../../utils/variables';
+import { FunctionJugadasCentena } from './function/get-jugadas-centenas';
 
 @Component({
   selector: 'app-historial-centena',
@@ -11,18 +11,15 @@ import { Centenas } from './models/centenas';
 })
 export class HistorialCentenaPage implements OnInit {
 
-  centenas: Centenas[] = [];
+  variables = new Variables
 
   constructor(private historialService: HistorialService) { }
 
   ngOnInit() {
-    this.historialService.getCentena().subscribe({
-      next:(centena) => {
-        this.centenas = centena;
-      },error:(err) => {
-        console.log(err);
-      },
-    })
+    FunctionJugadasCentena.getAll(
+      this.historialService,
+      this.variables
+    )
   }
 
 }

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { PremiosService } from 'src/app/shared/service/premios.service';
+import { Variables } from '../../utils/variables';
+import { FunctionPremiosParlesDia } from './function/get-premios-dia';
+import { FunctionPremiosParlesNoche } from './function/get-premios-noche';
 
 @Component({
   selector: 'app-premio-parles',
@@ -7,9 +11,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PremioParlesPage implements OnInit {
 
-  constructor() { }
+  variabes = new Variables
+  constructor(private premioService: PremiosService) { }
 
   ngOnInit() {
+    FunctionPremiosParlesDia.getAll(
+      this.premioService,
+      this.variabes
+    );
+
+    FunctionPremiosParlesNoche.getAll(
+      this.premioService,
+      this.variabes
+    );
+
   }
 
 }
