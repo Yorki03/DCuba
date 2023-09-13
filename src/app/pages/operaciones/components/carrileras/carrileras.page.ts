@@ -19,13 +19,11 @@ export class CarrilerasPage  {
   jugadasNormalesCorridas:any = {
     numero1: '',
     numero2: '',
-    dinero_fijo: '',
-    dinero_corrido: ''
+    dinero_fijo: ''
   }
   jugadasCorridaTerminales:any = {
     numero:'',
-    dinero_fijo: '',
-    dinero_corrido: ''
+    dinero_fijo: ''
   }
 
   constructor(private jugadasService: JugadasService) { }

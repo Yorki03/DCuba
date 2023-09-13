@@ -70,12 +70,6 @@
             <ion-input class="campos-numero-importe" [(ngModel)]="jugadasNormalesCorridas.dinero_fijo" label="$0.00" labelPlacement="floating" type="number" name="fijo" aria-required="true" fill="solid"></ion-input>
           </ion-col>
           
-          <ion-col>
-            <ion-label ><b>Corrido</b></ion-label>
-            <br>
-            <br>
-            <ion-input class="campos-numero-importe" [(ngModel)]="jugadasNormalesCorridas.dinero_corrido" label="$0.00" labelPlacement="floating" type="number" name="corrido" aria-required="true" fill="solid"></ion-input>
-          </ion-col>
         </ion-row>
       </ion-grid>
       <ion-button class="ini_button" (click)="jugadaCarrilera()" expand="full">Enviar Carrileras</ion-button>
@@ -97,12 +91,6 @@
             <ion-input class="campos-numero-importe" [(ngModel)]="jugadasCorridaTerminales.dinero_fijo" label="$0.00" labelPlacement="floating" type="number" name="fijo" aria-required="true" fill="solid"></ion-input>
           </ion-col>
           
-          <ion-col>
-            <ion-label ><b>Corrido</b></ion-label>
-            <br>
-            <br>
-            <ion-input class="campos-numero-importe" [(ngModel)]="jugadasCorridaTerminales.dinero_corrido" label="$0.00" labelPlacement="floating" type="number" name="corrido" aria-required="true" fill="solid"></ion-input>
-          </ion-col>
         </ion-row>
       </ion-grid>
       <ion-button class="ini_button" (click)="jugadaTerminales()" expand="full">Enviar Terminales</ion-button>

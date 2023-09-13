@@ -12,6 +12,17 @@
   </ion-header>
   <br>
 
+  <div style="text-align: center;">
+    <ion-datetime-button disabled="true" datetime="datetime"></ion-datetime-button>
+
+    <ion-modal [keepContentsMounted]="true">
+      <ng-template>
+        <ion-datetime id="datetime"></ion-datetime>
+      </ng-template>
+    </ion-modal>
+  </div>
+  <br>
+
   <ion-list >
     <ion-item-group>
       <ion-item-divider color="warning">
