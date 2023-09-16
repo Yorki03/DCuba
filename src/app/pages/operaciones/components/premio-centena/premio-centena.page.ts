@@ -3,6 +3,8 @@ import { PremiosService } from 'src/app/shared/service/premios.service';
 import { Variables } from '../../utils/variables';
 import { FunctionPremioCentenaDia } from './functions/get-centena-dia';
 import { FunctionPremioCentenaNoche } from './functions/get-centena-noche';
+import { DineroService } from 'src/app/shared/service/dinero.service';
+import { FunctionDinero } from '../../functions/get-dinero';
 
 @Component({
   selector: 'app-premio-centena',
@@ -12,7 +14,7 @@ import { FunctionPremioCentenaNoche } from './functions/get-centena-noche';
 export class PremioCentenaPage implements OnInit {
 
   variables = new Variables;
-  constructor(private premioService: PremiosService) { }
+  constructor(private premioService: PremiosService, private dineroService: DineroService) { }
 
   ngOnInit() {
     FunctionPremioCentenaDia.getAll(
@@ -24,6 +26,11 @@ export class PremioCentenaPage implements OnInit {
       this.premioService,
       this.variables
     );
+
+    FunctionDinero.getAll (
+      this.dineroService,
+      this.variables,
+    )
   }
 
 }

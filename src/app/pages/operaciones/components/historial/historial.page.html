@@ -30,7 +30,14 @@
       </ion-item-divider>
       <ion-item-divider color="success">
         
-        <h5 style="text-align: center; color: black;"><ion-icon name="cash"></ion-icon> <b>  Dinero: 0</b></h5>
+        <h5 style="text-align: center; color: black;" *ngFor="let dinero of variables.dineroTotal">
+          <ion-icon name="cash"></ion-icon> 
+          <b>  Bruto: {{ dinero.Total }}</b></h5>
+
+          <h5 style="text-align: center; color: black;" *ngFor="let dinero of variables.dineroTotal">
+            <ion-icon name="cash"></ion-icon> 
+            <b>  Limpio: {{ dinero.Limpio }}</b></h5>
+          
       </ion-item-divider>
       
       <ion-item>

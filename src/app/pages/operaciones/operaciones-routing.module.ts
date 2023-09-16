@@ -61,16 +61,13 @@ const routes: Routes = [
         path: 'premio-corrida',
         loadChildren: () => import('./components/premio-corrida/premio-corrida.module').then( m => m.PremioCorridaPageModule)
       },
+      {
+        path: 'historial-corrida',
+        loadChildren: () => import('./components/historial-corrida/historial-corrida.module').then( m => m.HistorialCorridaPageModule)
+      },
     ]
   },
-  {
-    path: 'historial-total',
-    loadChildren: () => import('./components/historial-total/historial-total.module').then( m => m.HistorialTotalPageModule)
-  },
-  {
-    path: 'historial-corrida',
-    loadChildren: () => import('./components/historial-corrida/historial-corrida.module').then( m => m.HistorialCorridaPageModule)
-  },
+  
   
 
   
