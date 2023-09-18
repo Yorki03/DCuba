@@ -8,6 +8,7 @@ import { JugadaNormales } from 'src/app/pages/operaciones/components/historial/m
 import { JugadaCentenas } from 'src/app/pages/operaciones/components/historial-centena/model/jugadaCentena';
 import { JugadaCorridas } from 'src/app/pages/operaciones/components/historial-corrida/model/jugdaCorrido';
 import { JugadaParles } from 'src/app/pages/operaciones/components/historial-parles/model/jugadaParles';
+import { JugadasCentenas, JugadasCorrida, JugadasNormales, JugadasParles } from 'src/app/pages/operaciones/components/jugadas/interface/interface';
 
 
 @Injectable({
@@ -55,4 +56,42 @@ export class HistorialService {
       catchError(handleError)
     )
   }
+
+  /**Borrar las jugadas realizadas**/
+  //Borrar Normales
+  deleteNormales(id: number){
+    const url= `https://dcuba.onrender.com/eliminar_jugada_normal/${id}`;
+    return this.http.delete<JugadasNormales>(url).pipe(
+      map(res => res.ok),
+      catchError(handleError)
+    );
+  }
+
+  //Borrar Corrida
+  deleteCorridas(id: number){
+    const url= `https://dcuba.onrender.com/eliminar_jugada_corrida/${id}`;
+    return this.http.delete<JugadasCorrida>(url).pipe(
+      map(res => res.ok),
+      catchError(handleError)
+    );
+  }
+
+  //Borrar Parles
+  deleteParles(id: number){
+    const url= `https://dcuba.onrender.com/eliminar_jugada_parles/${id}`;
+    return this.http.delete<JugadasParles>(url).pipe(
+      map(res => res.ok),
+      catchError(handleError)
+    );
+  }
+
+  //Borrar Centena
+  deleteCentena(id: number){
+    const url= `https://dcuba.onrender.com/eliminar_jugada_centena/${id}`;
+    return this.http.delete<JugadasCentenas>(url).pipe(
+      map(res => res.ok),
+      catchError(handleError)
+    );
+  }
+
 }

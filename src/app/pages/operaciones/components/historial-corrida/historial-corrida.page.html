@@ -12,6 +12,10 @@
   </ion-header>
   <br>
 
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
   <div style="text-align: center;">
     <ion-datetime-button disabled="true" datetime="datetime"></ion-datetime-button>
 
@@ -32,11 +36,13 @@
         
         <h5 style="text-align: center; color: black;" *ngFor="let dinero of variables.dineroTotal">
           <ion-icon name="cash"></ion-icon> 
-          <b>  Bruto: {{ dinero.Total }}</b></h5>
-
-          <h5 style="text-align: center; color: black;" *ngFor="let dinero of variables.dineroTotal">
-            <ion-icon name="cash"></ion-icon> 
-            <b>  Limpio: {{ dinero.Limpio }}</b></h5>
+          <b>  Bruto: {{ dinero.Total }}</b>
+        </h5>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <h5 style="text-align: center; color: black;" *ngFor="let dinero of variables.dineroTotal">
+          <ion-icon name="cash"></ion-icon> 
+          <b>  Limpio: {{ dinero.Limpio }}</b>
+        </h5>
       </ion-item-divider>
       
       <ion-item>
@@ -46,6 +52,7 @@
             <ion-col><b>Tel</b></ion-col>
             <ion-col><b>Estado</b></ion-col>
             <ion-col><b>Dinero</b></ion-col>
+            <ion-col><b>Borrar</b></ion-col>
           </ion-row>
         </ion-grid>
       </ion-item>
@@ -57,6 +64,10 @@
             <ion-col>{{corrida.Telefono}}</ion-col>
             <ion-col>{{corrida.Estado}}</ion-col>
             <ion-col>{{corrida.Dinero}}</ion-col>
+
+            <ion-button color="danger" (click)="delCorrida(corrida.idJugada)">
+              <ion-icon name="trash"></ion-icon>
+            </ion-button>
             
           </ion-row>
         </ion-grid>

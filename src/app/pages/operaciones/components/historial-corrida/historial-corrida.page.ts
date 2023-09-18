@@ -29,4 +29,23 @@ export class HistorialCorridaPage implements OnInit {
 
   }
 
+  delCorrida(id: number){
+    this.historiaService.deleteCorridas(id).subscribe();
+  }
+
+  handleRefresh(event: any) {
+    setTimeout(() => {
+      FunctionJugadaCorrida.getAll(
+        this.historiaService,
+        this.variables
+      );
+      
+      FunctionDinero.getAll(
+        this.dineroService,
+        this.variables
+      );
+      event.target.complete();
+    }, 2000);
+  }
+
 }

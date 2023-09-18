@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { catchError, map } from 'rxjs';
 
 import { handleError } from '../functions/http-error';
-import { JugadaCorrida, JugadasCentenas, JugadasNormales, JugadasParles  } from 'src/app/pages/operaciones/components/jugadas/interface/interface';
+import { JugadasCorrida, JugadasCentenas, JugadasNormales, JugadasParles  } from 'src/app/pages/operaciones/components/jugadas/interface/interface';
 
 
 @Injectable({
@@ -27,7 +27,7 @@ export class JugadasService {
   postCorrido(telefono: string, estado: string, dinero: number, id_numero: number){
     const url = 'https://dcuba.onrender.com/corridas';
     const body = {telefono, estado, dinero, id_numero};
-    return this.http.post<JugadaCorrida>(url, body).pipe(
+    return this.http.post<JugadasCorrida>(url, body).pipe(
       map(res => res.ok),
       catchError(handleError)
     )

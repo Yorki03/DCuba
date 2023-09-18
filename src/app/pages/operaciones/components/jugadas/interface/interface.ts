@@ -3,7 +3,7 @@ export interface JugadasNormales{
     msg: string;
 }
 
-export interface JugadaCorrida{
+export interface JugadasCorrida{
     ok: boolean;
     msg: string;
 }

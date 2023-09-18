@@ -28,11 +28,27 @@ export class HistorialPage implements OnInit {
     FunctionDinero.getAll(
       this.dineroSrevice,
       this.variables
-    )
+    );
+  }
 
+  delNormal(id: number){
+    this.historialService.deleteNormales(id).subscribe();
 
   }
 
-  
+  handleRefresh(event: any) {
+    setTimeout(() => {
+      FunctionJugadasNormales.getAll(
+        this.historialService,
+        this.variables
+      );
+      
+      FunctionDinero.getAll(
+        this.dineroSrevice,
+        this.variables
+      );
+      event.target.complete();
+    }, 2000);
+  }
 
 }

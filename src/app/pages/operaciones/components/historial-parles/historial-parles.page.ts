@@ -31,4 +31,23 @@ export class HistorialParlesPage implements OnInit {
     
   }
 
+  delParles(id: number){
+    this.historialService.deleteParles(id).subscribe();        
+  }
+
+  handleRefresh(event: any) {
+    setTimeout(() => {
+      FunctionJugadasParles.getAll(
+        this.historialService,
+        this.variables
+      )
+  
+      FunctionDinero.getAll(
+        this.dineroService,
+        this.variables
+      ); 
+      event.target.complete();
+    }, 2000);
+  }
+
 }

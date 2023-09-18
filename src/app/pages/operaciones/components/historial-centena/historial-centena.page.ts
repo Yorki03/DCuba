@@ -30,4 +30,33 @@ export class HistorialCentenaPage implements OnInit {
       )
   }
 
+  delCentena(id: number){
+    this.historialService.deleteCentena(id).subscribe();
+
+    FunctionJugadasCentena.getAll(
+      this.historialService,
+      this.variables
+    );
+
+    FunctionDinero.getAll(
+      this.dineroService,
+      this.variables
+    );
+  }
+
+  handleRefresh(event: any) {
+    setTimeout(() => {
+      FunctionJugadasCentena.getAll(
+        this.historialService,
+        this.variables
+      );
+  
+      FunctionDinero.getAll(
+        this.dineroService,
+        this.variables
+      );
+      event.target.complete();
+    }, 2000);
+  }
+
 }
